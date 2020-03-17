@@ -1,0 +1,68 @@
+<div class="bg-indigo-100">
+    <div class="container w-full h-screen mx-auto py-8">
+        <div class="w-full h-full flex">
+            <div class="my-auto w-full">
+                <div class="mx-auto lg:w-4/12 sm:w-full md:w-5/12">
+                    <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" [formGroup]="messageForm">
+                        <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="nombre">
+                            Nombre
+                        </label>
+                        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Walter White" formControlName="nombre" [ngClass]="{'border-red-500': submitted && messageForm.controls.nombre.errors}">
+                        <p *ngIf="submitted && messageForm.controls.nombre.errors" class="text-red-500 text-xs italic">Rellene este campo.</p>
+                        </div>
+                        <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="usuario">
+                            Usuario
+                        </label>
+                        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="heisenberg.bluesky" formControlName="usuario" [ngClass]="{'border-red-500': submitted && messageForm.controls.usuario.errors}">
+                        <p *ngIf="submitted && messageForm.controls.usuario.errors" class="text-red-500 text-xs italic">El usuario debe tener entre 6 y 20 carácteres.</p>
+                        </div>
+                        <div class="mb-6">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="correo">
+                            Email
+                        </label>
+                        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="email" placeholder="w.white@email.com" formControlName="correo" [ngClass]="{'border-red-500': submitted && messageForm.controls.correo.errors}">
+                        <p *ngIf="submitted && messageForm.controls.correo.errors" class="text-red-500 text-xs italic">Inserte un correo válido o no existente.</p>
+                        </div>
+                        <div class="mb-6">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+                            Contraseña
+                        </label>
+                        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" type="password" placeholder="******************" formControlName="password" [ngClass]="{'border-red-500': submitted && messageForm.controls.password.errors}">
+                        <p *ngIf="submitted && messageForm.controls.password.errors" class="text-red-500 text-xs italic">La contraseña debe tener entre 6 y 20 carácteres.</p>
+                        <!-- <p *ngIf="!validUser" class="text-red-500 text-xs italic">Please type valid data.</p> -->
+                        </div>
+                        <div class="mb-6">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="repeat_password">
+                            Repetir contraseña
+                        </label>
+                        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" type="password" placeholder="******************" formControlName="repeat_password" [ngClass]="{'border-red-500': submitted && messageForm.controls.repeat_password.errors}">
+                        <p *ngIf="submitted && messageForm.controls.repeat_password.errors" class="text-red-500 text-xs italic">Las contraseñas no coinciden.</p>
+                        <!-- <p *ngIf="!validUser" class="text-red-500 text-xs italic">Please type valid data.</p> -->
+                        </div>
+                        <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="birthyear">
+                            Año de nacimiento
+                        </label>
+                        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="number" placeholder="1985" formControlName="birthyear" [ngClass]="{'border-red-500': submitted && messageForm.controls.birthyear.errors}">
+                        <p *ngIf="submitted && messageForm.controls.birthyear.errors" class="text-red-500 text-xs italic">Inserta un año correcto.</p>
+                        <p *ngIf="accountExists" class="text-red-500 text-xs italic">La cuenta ya existe.</p>
+                        </div>
+                        <div class="flex items-center justify-between">
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button" (click)="onRegister()">
+                            Registrar
+                        </button>
+                        <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" routerLink="/login">
+                            Ya tienes una cuenta?
+                        </a>
+                        </div>
+                    </form>
+                    <p class="text-center text-gray-500 text-xs">
+                        &copy;2020 Acme Corp. All rights reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

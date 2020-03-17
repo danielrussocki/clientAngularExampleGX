@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'gxclient';
+  isHide:boolean = false;
+  hideNav():void{
+    this.isHide = !this.isHide;
+  }
 }

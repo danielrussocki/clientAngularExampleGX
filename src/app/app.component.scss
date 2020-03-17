@@ -1,0 +1,11 @@
+.show{
+    animation: show .3s ease-in-out;
+}
+
+@keyframes show {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}
